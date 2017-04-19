@@ -1,0 +1,16 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+.history-container {
+	min-height: 100%;
+	position: relative;
+}
+
+.footer_row {
+	bottom: 0;
+	margin-bottom: 1em !important;
+	position: absolute;
+	width: 100%;
+}

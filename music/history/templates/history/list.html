@@ -1,0 +1,28 @@
+{% extends "history/site_container.html" %}
+
+
+{% block content %}	
+
+<div class="jumbotron">
+    <h1>Choose an <i>Artist</i> to get started!!</h1>
+    <p class="lead">We here at Music History, Inc love to re-use the same project theme for multiple multiple exercises throughout your time at NSS!! This is (maybe) the final version of music history you will ever see!!</p>	        
+</div>
+
+
+<div class="row">
+    <div id="content">
+		{% if artist_list %}
+			{% for artist in artist_list %}
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<h2><a href="{% url 'history:detail' artist.id %}">{{artist.ArtistName}}</a> / Song Count: {{artist.song_set.count}}</h2>								
+					</div>
+				</div>
+			{% endfor %}				
+		{% else %}
+			<p>No artists available</p>
+		{% endif %}        
+    </div>			
+</div>
+{% endblock content %}
+

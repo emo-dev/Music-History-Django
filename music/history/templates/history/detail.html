@@ -1,0 +1,27 @@
+{% extends "history/site_container.html" %}
+
+{% block content %}
+
+<div class="row">
+	<div class="col-md-10 col-md-offset-1 text-center">
+		<h1>{{artist.ArtistName}}</h1>		
+	</div>
+</div>
+
+<div class="row">
+	<div class="row"
+		  style="margin-bottom: 1em;">
+		<div class="col-md-10 col-md-offset-1">
+			<h3><u>Song Titles</u></h3>			
+		</div>
+	</div>
+	
+	{% for song in artist.song_set.all %}
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<p class="lead">{{forloop.counter}}: {{song.SongTitle}}</p>
+			</div>
+		</div>		
+	{% endfor %}	
+</div>
+{% endblock content %}	
